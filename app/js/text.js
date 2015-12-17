@@ -3,6 +3,30 @@ function isY(ch) {
 	return _in("aoeiuAOEIU", ch);
 }
 
+http://blog.jobbole.com/49762/ 判断是否为回文
+
+function isPalindrome(word) {
+	if (word.length % 2 == 0) {
+		return false;
+	}
+	for (var i = 0, j = word.length - 1; i < j; i++, j--) {
+		if (word[i] != word[j]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function dom_is_palindrome() {
+	var o = document.getElementById("original").value;
+	var n = isPalindrome(o);
+	console.log(o + " is palindrome?" + n);
+	document.getElementById("details").innerHTML = o + " is palindrome? " + n;
+}
+
+console.log("abc is palindrome? " + isPalindrome("abc"));
+console.log("aba is palindrome? " + isPalindrome("aba"));
+
 // http://blog.jobbole.com/49762/ 统计元音字母
 function statAoeiu(word) {
 	var sum = 0;
