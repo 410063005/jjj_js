@@ -1,8 +1,38 @@
-﻿// http://blog.jobbole.com/49762/ 拉丁猪文字游戏
+﻿
 function isY(ch) {
-	return _in("aoeiu", ch);
+	return _in("aoeiuAOEIU", ch);
 }
 
+// http://blog.jobbole.com/49762/ 统计元音字母
+function statAoeiu(word) {
+	var sum = 0;
+	var details = {}
+	for (var i = 0; i < word.length; i++) {
+		var ch = word[i];
+		if (isY(ch)) {
+			sum++;
+			if (ch in details) {
+				details[ch] += 1;
+			} else {
+				details[ch] = 1;
+			}
+		}
+	}
+	return {'sum': sum, 'details': details};
+}
+
+function dom_stat_aoeiu() {
+	var o = document.getElementById("original").value;
+	var n = statAoeiu(o);
+	console.log("o=" + o + ",n=" + n.sum);
+	document.getElementById("reversed").value = "sum=" + n.sum;
+	document.getElementById("details").innerHTML = JSON.stringify(n.details);
+}
+
+console.log(statAoeiu("javascript"));
+console.log(statAoeiu("indexOf"));
+
+// http://blog.jobbole.com/49762/ 拉丁猪文字游戏
 function latinPig(word) {
 	var index = -1;
 	var first = "";
