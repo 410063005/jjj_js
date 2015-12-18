@@ -3,7 +3,22 @@ function isY(ch) {
 	return _in("aoeiuAOEIU", ch);
 }
 
-http://blog.jobbole.com/49762/ 判断是否为回文
+// http://blog.jobbole.com/49762/ 文本编辑器
+var editor = {
+	
+	last_content: "",
+	
+	dom_editor_listener: function(ele) {
+		console.log(this.last_content);
+		console.log(ele.value);
+		
+		
+		
+		this.last_content = ele.value;
+	}
+};
+
+// http://blog.jobbole.com/49762/ 判断是否为回文
 
 function isPalindrome(word) {
 	if (word.length % 2 == 0) {

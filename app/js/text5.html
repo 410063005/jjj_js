@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script type='text/javascript' src='my_common.js'></script>
+<script type='text/javascript' src='text.js'></script>
+<title>文本编辑器</title>
+</head>
+<body>
+<input id="original" type="text"><br>
+<input id="reversed" type="text" disabled><br>
+<div id="details"></div>
+<textarea id="editor" cols="120" rows="30" onkeyup="editor.dom_editor_listener(this)"></textarea><br>
+<input type="button" onclick="dom_is_palindrome()" value="run"><br>
+</body>
