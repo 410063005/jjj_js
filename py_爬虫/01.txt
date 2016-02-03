@@ -1,0 +1,15 @@
+﻿
+urllib2 - 如何设置代理
+http://blog.csdn.net/pleasecallmewhy/article/details/8925978
+
+cmd - 如何设置代理
+http://stackoverflow.com/questions/22059670/how-to-set-proxy-for-command-prompt
+
+python - re
+http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html
+
+boomfilter
+http://billmill.org/bloomfilter-tutorial/
+
+python爬虫
+http://python.jobbole.com/81359/
