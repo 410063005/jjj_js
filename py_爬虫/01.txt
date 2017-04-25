@@ -1,4 +1,4 @@
-﻿
+
 urllib2 - 如何设置代理
 http://blog.csdn.net/pleasecallmewhy/article/details/8925978
 
@@ -13,3 +13,14 @@ http://billmill.org/bloomfilter-tutorial/
 
 python爬虫
 http://python.jobbole.com/81359/
+
+requests访问https, 淘宝出错
+
+urllib2.URLError: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:590)>
+
+解决方法
+http://stackoverflow.com/questions/31730819/python-sslerror-using-requests-for-surveymonkey-com
+
+import requests.packages.urllib3.util.ssl_
+print(requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS)
+requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL'
