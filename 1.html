@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>js http client</title>
+        <script src="https://unpkg.com/http-client/umd/http-client.min.js"></script>
+    </head>
+    <body>
+        <h1></h1>
+        
+        <script>
+        
+const fetch = HTTPClient.createFetch(
+HTTPClient.base('https://test.campusx.qq.com/api/v1'),  // Prefix all request URLs
+HTTPClient.accept('application/json'),         // Set "Accept: application/json" in the request headers
+HTTPClient.parse('json'),                      // Read the response as JSON and put it in response.body
+
+HTTPClient.auth('Bearer B0FB6184C8640E8DE211A1D42DDDDDA4'),
+HTTPClient.header('x-user', '111A83B1683DB7F8FAE82844D2EA59CF'),
+HTTPClient.header('x-3rd-qq', 'appid=1105403453'),
+HTTPClient.header('x-qcloud-im', 'appid=1400010915'),
+HTTPClient.header('x-client', 'platform=android,version=2050507,sdk_int=22,device=860270034208155,channel=official'),
+HTTPClient.header('Origin', 'https://campusx.qq.com')
+);
+  
+  
+fetch('/configs').then(response => {
+  console.log(response.jsonData);
+})        
+
+fetch('/bbs?query_topics&gret=&num=20&get_recommend_topics=0').then(response => {
+    console.log(response.jsonData);
+})
+
+        </script>
+    </body>
+</html>
